@@ -16,6 +16,8 @@
 		7517738226944EA300C5F3AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7517738126944EA300C5F3AB /* GoogleService-Info.plist */; };
 		756304052697B80D00D5713A /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756304042697B80D00D5713A /* Review.swift */; };
 		756304072697B84F00D5713A /* ReviewInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756304062697B84F00D5713A /* ReviewInfomation.swift */; };
+		7563040E269827C500D5713A /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563040D269827C500D5713A /* Firebase.swift */; };
+		756304102698439400D5713A /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563040F2698439400D5713A /* UseCase.swift */; };
 		757ECB2726957361006AC08D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757ECB2626957361006AC08D /* SecondViewController.swift */; };
 		F3289CFE4D99123F661A12D5 /* Pods_CloudFireStorePractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA36E80769769B3F8EE6FCD /* Pods_CloudFireStorePractice.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		7517738126944EA300C5F3AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		756304042697B80D00D5713A /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = "../New Group/Review.swift"; sourceTree = "<group>"; };
 		756304062697B84F00D5713A /* ReviewInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewInfomation.swift; path = "../New Group/ReviewInfomation.swift"; sourceTree = "<group>"; };
+		7563040D269827C500D5713A /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		7563040F2698439400D5713A /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		757ECB2626957361006AC08D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = "../New Group/SecondViewController.swift"; sourceTree = "<group>"; };
 		9BA36E80769769B3F8EE6FCD /* Pods_CloudFireStorePractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudFireStorePractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,6 +111,8 @@
 			children = (
 				756304062697B84F00D5713A /* ReviewInfomation.swift */,
 				756304042697B80D00D5713A /* Review.swift */,
+				7563040D269827C500D5713A /* Firebase.swift */,
+				7563040F2698439400D5713A /* UseCase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7563040E269827C500D5713A /* Firebase.swift in Sources */,
+				756304102698439400D5713A /* UseCase.swift in Sources */,
 				756304052697B80D00D5713A /* Review.swift in Sources */,
 				756304072697B84F00D5713A /* ReviewInfomation.swift in Sources */,
 				757ECB2726957361006AC08D /* SecondViewController.swift in Sources */,
