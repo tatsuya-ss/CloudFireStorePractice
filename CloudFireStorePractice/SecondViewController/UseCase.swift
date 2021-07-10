@@ -10,6 +10,26 @@ import Foundation
 final class UseCase {
     var firebase = Firebase()
     
+    func listener() -> ReviewInfomation? {
+        firebase.movieReview
+    }
+    
+    func removeListener() {
+        firebase.removeListener()
+    }
+    
+    func save(title: String, score: Int) {
+        firebase.save(title: title, score: score)
+    }
+    
+    func updata(score: Int) {
+        firebase.update(score: score)
+    }
+    
+    func delete() {
+        firebase.delete()
+    }
+    
     func fetch(completion: @escaping (Result<[ReviewInfomation], Error>) -> Void) {
         firebase.fetch { result in
             switch result {
@@ -41,6 +61,10 @@ final class UseCase {
                 completion(.failure(error))
             }
         }
+    }
+    
+    func add(title: String, score: Int) {
+        firebase.add(title: title, score: score)
     }
     
 }

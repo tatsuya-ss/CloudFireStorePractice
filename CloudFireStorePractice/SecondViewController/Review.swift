@@ -13,6 +13,27 @@ final class Review {
     var movieReview: ReviewInfomation?
     let useCase = UseCase()
     
+    func listener() {
+        guard let movieReview = useCase.listener() else { return }
+        self.movieReview = movieReview
+    }
+    
+    func removeListener() {
+        useCase.removeListener()
+    }
+    
+    func save(title: String, score: Int) {
+        useCase.save(title: title, score: score)
+    }
+    
+    func update(score: Int) {
+        useCase.updata(score: score)
+    }
+    
+    func delete() {
+        useCase.delete()
+    }
+    
     func fetch(completion: @escaping (Result<[ReviewInfomation], Error>) -> Void) {
         useCase.fetch { result in
             switch result {
@@ -48,6 +69,10 @@ final class Review {
                 print(error)
             }
         }
+    }
+    
+    func add(title: String, score: Int) {
+        useCase.add(title: title, score: score)
     }
     
     func fetch(movieData: [String: Any]) {
