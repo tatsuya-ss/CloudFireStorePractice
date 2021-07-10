@@ -44,8 +44,8 @@ final class Firebase {
         }
     }
     
-    func ascending(completion: @escaping (Result<[ReviewInfomation], Error>) -> Void) {
-        db.collection("movieData").order(by: "score", descending: false).getDocuments() { querySnapshot, error in
+    func sort(isDesecding: Bool, completion: @escaping (Result<[ReviewInfomation], Error>) -> Void) {
+        db.collection("movieData").order(by: "score", descending: isDesecding).getDocuments() { querySnapshot, error in
             if let error = error {
                 print(error.localizedDescription)
             } else {
@@ -57,7 +57,6 @@ final class Firebase {
             }
         }
     }
-    
 }
 
 private extension ReviewInfomation {

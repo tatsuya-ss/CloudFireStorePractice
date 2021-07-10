@@ -38,8 +38,8 @@ final class Review {
         }
     }
     
-    func ascending(completion: @escaping (Result<[ReviewInfomation], Error>) -> Void) {
-        useCase.ascending { result in
+    func sort(isDesecding: Bool, completion: @escaping (Result<[ReviewInfomation], Error>) -> Void) {
+        useCase.sort(isDesecding: isDesecding) { result in
             switch result {
             case let .success(reviewInfomations):
                 self.movieReviews = reviewInfomations

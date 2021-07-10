@@ -32,8 +32,8 @@ final class UseCase {
         }
     }
     
-    func ascending(completion: @escaping (Result<[ReviewInfomation], Error>) -> Void) {
-        firebase.ascending { result in
+    func sort(isDesecding: Bool, completion: @escaping (Result<[ReviewInfomation], Error>) -> Void) {
+        firebase.sort(isDesecding: isDesecding) { result in
             switch result {
             case let .success(reviewInfomations):
                 completion(.success(reviewInfomations))

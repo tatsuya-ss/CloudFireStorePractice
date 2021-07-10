@@ -122,7 +122,7 @@ final class SecondViewController: UIViewController {
     }
     
     @IBAction func ascendingButtonTapped(_ sender: Any) {
-        review.ascending { result in
+        review.sort(isDesecding: false) { result in
             switch result {
             case .success:
                 self.allFetchLabel.text = self.review.toString()
@@ -130,27 +130,17 @@ final class SecondViewController: UIViewController {
                 print(error)
             }
         }
-//        db.collection("movieData").order(by: "score", descending: false).getDocuments() { querySnapshot, error in
-//            if let error = error {
-//                print(error.localizedDescription)
-//            } else {
-//                self.review.fetch(documents: querySnapshot!.documents)
-//                self.allFetchLabel.text = self.review.toString()
-//            }
-//        }
-        
     }
     
     @IBAction func descendingButton(_ sender: Any) {
-//        db.collection("movieData").order(by: "score", descending: true).getDocuments() { querySnapshot, error in
-//            if let error = error {
-//                print(error.localizedDescription)
-//            } else {
-//                self.review.fetch(documents: querySnapshot!.documents)
-//                self.allFetchLabel.text = self.review.toString()
-//            }
-//        }
-//
+        review.sort(isDesecding: true) { result in
+            switch result {
+            case .success:
+                self.allFetchLabel.text = self.review.toString()
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
     
     
