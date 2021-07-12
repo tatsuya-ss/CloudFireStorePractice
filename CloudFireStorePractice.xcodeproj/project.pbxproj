@@ -16,6 +16,8 @@
 		7517738226944EA300C5F3AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7517738126944EA300C5F3AB /* GoogleService-Info.plist */; };
 		756304052697B80D00D5713A /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756304042697B80D00D5713A /* Review.swift */; };
 		756304072697B84F00D5713A /* ReviewInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756304062697B84F00D5713A /* ReviewInfomation.swift */; };
+		7563040E269827C500D5713A /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563040D269827C500D5713A /* Firebase.swift */; };
+		756304102698439400D5713A /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7563040F2698439400D5713A /* UseCase.swift */; };
 		757ECB2726957361006AC08D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757ECB2626957361006AC08D /* SecondViewController.swift */; };
 		F3289CFE4D99123F661A12D5 /* Pods_CloudFireStorePractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA36E80769769B3F8EE6FCD /* Pods_CloudFireStorePractice.framework */; };
 /* End PBXBuildFile section */
@@ -32,9 +34,11 @@
 		7517737926944C7700C5F3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7517737B26944C7700C5F3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7517738126944EA300C5F3AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		756304042697B80D00D5713A /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = "../New Group/Review.swift"; sourceTree = "<group>"; };
-		756304062697B84F00D5713A /* ReviewInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewInfomation.swift; path = "../New Group/ReviewInfomation.swift"; sourceTree = "<group>"; };
-		757ECB2626957361006AC08D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = "../New Group/SecondViewController.swift"; sourceTree = "<group>"; };
+		756304042697B80D00D5713A /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		756304062697B84F00D5713A /* ReviewInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewInfomation.swift; sourceTree = "<group>"; };
+		7563040D269827C500D5713A /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		7563040F2698439400D5713A /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		757ECB2626957361006AC08D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9BA36E80769769B3F8EE6FCD /* Pods_CloudFireStorePractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudFireStorePractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,7 @@
 				7517736D26944C7500C5F3AB /* AppDelegate.swift */,
 				7517736F26944C7500C5F3AB /* SceneDelegate.swift */,
 				7517737126944C7500C5F3AB /* ViewController.swift */,
+				757ECB2626957361006AC08D /* SecondViewController.swift */,
 				7517737326944C7500C5F3AB /* Main.storyboard */,
 				7517737626944C7700C5F3AB /* Assets.xcassets */,
 				7517737826944C7700C5F3AB /* LaunchScreen.storyboard */,
@@ -96,19 +101,12 @@
 		756304082697B86800D5713A /* SecondViewController */ = {
 			isa = PBXGroup;
 			children = (
-				756304092697B89C00D5713A /* Model */,
-				757ECB2626957361006AC08D /* SecondViewController.swift */,
-			);
-			path = SecondViewController;
-			sourceTree = "<group>";
-		};
-		756304092697B89C00D5713A /* Model */ = {
-			isa = PBXGroup;
-			children = (
 				756304062697B84F00D5713A /* ReviewInfomation.swift */,
+				7563040D269827C500D5713A /* Firebase.swift */,
+				7563040F2698439400D5713A /* UseCase.swift */,
 				756304042697B80D00D5713A /* Review.swift */,
 			);
-			path = Model;
+			path = SecondViewController;
 			sourceTree = "<group>";
 		};
 		B42B34948B61303142F691BB /* Frameworks */ = {
@@ -131,6 +129,7 @@
 				7517736726944C7500C5F3AB /* Frameworks */,
 				7517736826944C7500C5F3AB /* Resources */,
 				8530EB1650CEE4B45B0920FF /* [CP] Embed Pods Frameworks */,
+				756304162699935000D5713A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -210,6 +209,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		756304162699935000D5713A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 		8530EB1650CEE4B45B0920FF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +250,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7563040E269827C500D5713A /* Firebase.swift in Sources */,
+				756304102698439400D5713A /* UseCase.swift in Sources */,
 				756304052697B80D00D5713A /* Review.swift in Sources */,
 				756304072697B84F00D5713A /* ReviewInfomation.swift in Sources */,
 				757ECB2726957361006AC08D /* SecondViewController.swift in Sources */,
