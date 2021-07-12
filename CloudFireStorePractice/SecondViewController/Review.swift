@@ -34,6 +34,10 @@ final class Review {
         useCase.delete()
     }
     
+    func fetchOneReview() {
+        movieReview = useCase.fetchOneReview()
+    }
+    
     func fetch(completion: @escaping (Result<[ReviewInfomation], Error>) -> Void) {
         useCase.fetch { result in
             switch result {

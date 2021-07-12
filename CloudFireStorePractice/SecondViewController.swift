@@ -15,6 +15,12 @@ final class SecondViewController: UIViewController {
     
     let review = Review()
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setNotification()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         review.listener()
@@ -26,10 +32,11 @@ final class SecondViewController: UIViewController {
         review.removeListener()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        db = Firestore.firestore()
-//        docRef = db.collection("movieData").document("movie")
+    private func setNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(update),
+                                               name: .updataText,
+                                               object: nil)
     }
     
     
@@ -104,4 +111,11 @@ final class SecondViewController: UIViewController {
     }
     
     
+}
+
+extension SecondViewController {
+    @objc func update() {
+        review.fetchOneReview()
+        self.displayLabel.text = review.toStringForOneReview()
+    }
 }

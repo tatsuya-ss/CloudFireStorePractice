@@ -18,6 +18,10 @@ final class UseCase {
         firebase.removeListener()
     }
     
+    func fetchOneReview() -> ReviewInfomation? {
+        firebase.fetchOneReview()
+    }
+    
     func save(title: String, score: Int) {
         firebase.save(title: title, score: score)
     }

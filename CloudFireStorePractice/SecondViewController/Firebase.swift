@@ -11,6 +11,9 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+extension Notification.Name {
+    static let updataText = Notification.Name("update")
+}
 
 final class Firebase {
     var db = Firestore.firestore()
@@ -34,11 +37,17 @@ final class Firebase {
             self.movieReview = ReviewInfomation(title: movieData["title"] as? String ?? "",
                                                 score: movieData["score"] as? Int ?? 0,
                                                 saveDate: movieData["date"] as? Date ?? Date())
+            NotificationCenter.default.post(name: .updataText, object: nil)
         }
     }
     
     func removeListener() {
         quoteListener.remove()
+    }
+    
+    func fetchOneReview() -> ReviewInfomation? {
+        guard let movieReview = movieReview else { return nil }
+        return movieReview
     }
     
     func save(title: String, score: Int) {
